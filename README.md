@@ -1,4 +1,4 @@
-# SERIAL-IN-SERIAL-OUT-SHIFTREGISTER
+# SERIAL-IN-SERIAL-OUT-SHIFT REGISTER
 
 **AIM:**
 
@@ -18,25 +18,51 @@ The logic circuit provided below demonstrates a serial-in serial-out (SISO) shif
 
 ![image](https://github.com/naavaneetha/SERIAL-IN-SERIAL-OUT-SHIFTREGISTER/assets/154305477/e81c4072-37f9-46c6-8145-566764b74c3a)
 
-Figure 01 4 Bit SISO Register
 
 The synchronous nature of the flip-flops ensures that the shifting of data occurs in a coordinated manner. When the clock signal rises, the input data is sampled and stored in the first flip-flop. On subsequent clock pulses, the stored data propagates through the flip-flops, moving from one flip-flop to the next.
 Each D flip-flop in the circuit has a Data (D) input, a Clock (CLK) input, and an output (Q). The D input represents the data to be loaded into the flip-flop, while the CLK input is connected to the common clock signal. The output (Q) of each flip-flop is connected to the D input of the next flip-flop, forming a cascade.
 
 **Procedure**
 
-/* write all the steps invloved */
+Step 1: Apply the first data bit serially at the input terminal of the first flip-flop.
+
+Step 2: On the first clock pulse, the input bit is stored in the first flip-flop.
+
+Step 3: Apply the next data bit and, with the next clock pulse, shift the previous bit into the second flip-flop.
+
+Step 4: Continue applying input bits, and with each clock pulse, all stored bits shift one position to the right.
+
+Step 5: After all bits are entered, continue giving clock pulses to shift data out serially from the last flip-flop.
+
+Step 6: The output appears serially in the same order as the input but delayed by the number of stages in the register.
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming.
+ Program for flipflops and verify its truth table in quartus using Verilog programming.
 
-Developed by: RegisterNumber:
-
-*/
-
+Developed by: POPURI SAHITHYA  RegisterNumber: 25004681
+```
+module EXP10(clk, sin, q);
+input clk;
+input sin;
+output [3:0] q;
+reg [3:0] q;
+always @(posedge clk)
+begin
+q[0] <= sin;
+q[1] <= q[0];
+q[2] <= q[1];
+q[3] <= q[2];
+end
+endmodule
+```
 **RTL LOGIC FOR SISO Shift Register**
+
+<img width="996" height="349" alt="{25EDD233-148E-40C9-82F5-491BCC60A711}" src="https://github.com/user-attachments/assets/7d2313a1-0e31-468e-bedf-e9680658837c" />
 
 **TIMING DIGRAMS FOR SISO Shift Register**
 
-**RESULTS**
+<img width="1028" height="155" alt="{6B4D6E4F-6A0B-478A-A8FD-C654FF215EB6}" src="https://github.com/user-attachments/assets/03640c6c-216b-468b-9d7c-30d452e25963" />
+
+**RESULTS:**
+Thus SISO Shift Register using verilog and validating their functionality using their functional tables has successful execution of the program.

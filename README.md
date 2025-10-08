@@ -41,24 +41,13 @@ Step 6: The output appears serially in the same order as the input but delayed b
  Program for flipflops and verify its truth table in quartus using Verilog programming.
 
 Developed by: POPURI SAHITHYA  RegisterNumber: 25004681
-```
-module EXP10(clk, sin, q);
-input clk;
-input sin;
-output [3:0] q;
-reg [3:0] q;
-always @(posedge clk)
-begin
-q[0] <= sin;
-q[1] <= q[0];
-q[2] <= q[1];
-q[3] <= q[2];
-end
-endmodule
-```
+
+<img width="1546" height="650" alt="{265A386E-79C4-499B-BE25-A3AD6ACD11BB}" src="https://github.com/user-attachments/assets/d9004c9d-f1b1-4141-8f94-e6c883676140" />
+
 **RTL LOGIC FOR SISO Shift Register**
 
-<img width="996" height="349" alt="{25EDD233-148E-40C9-82F5-491BCC60A711}" src="https://github.com/user-attachments/assets/7d2313a1-0e31-468e-bedf-e9680658837c" />
+<img width="1496" height="686" alt="{B9B6BB41-F729-4342-90D7-706D13D18670}" src="https://github.com/user-attachments/assets/ed1fd96e-9c25-4bad-8778-eff60dfee020" />
+
 
 **TIMING DIGRAMS FOR SISO Shift Register**
 
